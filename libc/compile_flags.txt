@@ -1,0 +1,11 @@
+-D__is_libk
+-D__arch_i386
+--target=i686-elf
+
+-std=gnu23
+-ffreestanding
+-O2
+-Wall
+-Wextra
+-Iinclude
+-I../kernel/include

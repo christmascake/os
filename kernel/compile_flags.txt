@@ -1,0 +1,11 @@
+-D__is_kernel
+-D__arch_i386
+--target=i686-elf
+-std=gnu23
+-ffreestanding
+-O2
+-Wall
+-Wextra
+-Iinclude
+-Iarch
+-I../libc/include
