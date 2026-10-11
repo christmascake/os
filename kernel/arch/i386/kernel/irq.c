@@ -24,7 +24,7 @@
 #define IRQ15_IDE_SECONDARY	    15
 
 struct regs {
-	uint32_t eax, ecx, edx, ebx, esp, ebp, esi, edi;
+	uint32_t edi, esi, ebp, eso, ebx, edx, ecx, eax;
 	uint32_t eip;
 	uint32_t cs;
 	uint32_t eflags;
