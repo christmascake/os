@@ -3,12 +3,12 @@
 
 #include <stdint.h>
 
-inline void io_outb(const uint16_t port, const uint8_t val)
+static inline void io_outb(const uint16_t port, const uint8_t val)
 {
 	__asm__ volatile("outb %b0, %w1" : : "a"(val), "Nd"(port) : "memory");
 }
 
-inline uint8_t io_inb(const uint16_t port)
+static inline uint8_t io_inb(const uint16_t port)
 {
 	uint8_t ret = 0;
 
@@ -17,7 +17,7 @@ inline uint8_t io_inb(const uint16_t port)
 	return ret;
 }
 
-inline void io_wait(void)
+static inline void io_wait(void)
 {
 	io_outb(0x80, 0);
 }
