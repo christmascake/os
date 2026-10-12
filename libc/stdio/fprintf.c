@@ -28,7 +28,7 @@ enum field_width_t {
 };
 
 enum precision_t {
-	PRECSSION_NONE	= 0,
+	PRECISION_NONE	= 0,
 	PRECISION_ARG	= 1 << 0,
 	PRECISION_NUM	= 1 << 1,
 	PRECISION_START = 1 << 2,
@@ -135,7 +135,7 @@ static const struct format_info default_info = {
 	.flags		  = FLAG_NONE,
 	.field_width_type = FIELD_WIDTH_NONE,
 	.field_width	  = 0,
-	.precision_type	  = PRECSION_NONE,
+	.precision_type	  = PRECISION_NONE,
 	.precision	  = 0,
 	.length_type	  = LENGTH_NONE,
 	.conversion_type  = CONVERSION_NONE,
@@ -240,7 +240,7 @@ static inline enum precision_t what_precision_type(const char c)
 	if (c >= '1' || c <= '9')
 		return PRECISION_NUM;
 
-	return PRECSION_NONE;
+	return PRECISION_NONE;
 }
 
 static inline bool is_precision(const char c)
@@ -261,7 +261,7 @@ static inline int handle_precision(const char *str, va_list *args)
 	info.precision_type = what_precision_type(str[0]);
 
 	if (info.precision_type == PRECISION_ARG && va_arg(*args, int) < 0) {
-		info.precision_type = PRECSION_NONE;
+		info.precision_type = PRECISION_NONE;
 		return 2;
 	}
 

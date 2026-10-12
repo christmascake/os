@@ -23,13 +23,6 @@ void framebuffer_draw_glyph_at(const int x, const int y,
 	const auto offcol = x * w;
 	const auto offrow = y * h;
 
-	//uint32_t *foo = (uint32_t *)fb_state.info->common.framebuffer_addr;
-
-	//for (int i = 0; i < 100; i++) {
-	//	*foo = 123;
-	//	foo += 4;
-	//}
-
 	for (auto i = offrow; i < (offrow + h); i++) {
 		for (auto j = offcol; j < (offcol + w); j++) {
 			uint32_t offset =
